@@ -6,6 +6,7 @@ const Menu = () => {
         { name: 'Dictionary', path: '/dictionary', bg: 'dict' },
         { name: 'Password Generator', path: '/password-generator', bg: 'pass' },
         { name: 'Tic Tac Toe', path: '/tic-tac-toe', bg: 'ttt' },
+        { name: 'Calculator', path: '/calculator', bg: 'calc' }
     ]
     return (
 

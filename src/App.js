@@ -5,6 +5,7 @@ import Dictionary from './components/Dictionary';
 import Menu from './components/Menu';
 import PasswordGenerator from './components/PasswordGenerator';
 import TicTacToe from './components/TicTacToe';
+import Calculator from './components/Calculator';
 
 const appRouter = createBrowserRouter([
   {
@@ -23,6 +24,9 @@ const appRouter = createBrowserRouter([
   {
     path: '/tic-tac-toe',
     element: <TicTacToe />
+  }, {
+    path: '/calculator',
+    element: <Calculator />
   }
 
 ]);

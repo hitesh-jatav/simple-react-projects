@@ -15,8 +15,9 @@ a {
   margin-right: auto;
   max-width: 800px;
   width: fit-content;
+
   .menu-icon {
-    width: 200px;
+    min-width: 200px;
     border: 1px solid black;
     height: 200px;
     margin: 30px;
@@ -230,6 +231,63 @@ a {
   background-color: #C7DCA7;
 }
 
+.calc-wrapper {
+  background-color: #ACE2E1;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+
+  .calc-box {
+    background-color: #F7EEDD;
+    height: 600px;
+    border-radius: 50px;
+    padding: 20px;
+    width: 500px;
+
+    .screen {
+      background-color: #344C64;
+      width: 100%;
+      height: 140px;
+      border-radius: 20px;
+      color: white;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: end;
+      .equation{
+        margin: 20px;
+        font-size: 24px;
+      }
+    }
+
+    .btn-group {
+      width: 100%;
+      justify-content: space-evenly;
+      margin-top: 20px;
+
+      .btn {
+        border: 1px solid gray;
+        width: 70px;
+        border-radius: 50%;
+        height: 70px;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        font-weight: 700;
+        cursor: pointer;
+      }
+
+      .orange{
+        background-color: orange;
+      }
+    }
+  }
+}
+
+
+
+
 
 /* The Modal (background) */
 .modal {
@@ -278,6 +336,9 @@ a {
 }
 
 .pass {
-  color: white !important;
   background-color: #344C64;
+}
+
+.calc {
+  background-color: #ACE2E1;
 }
