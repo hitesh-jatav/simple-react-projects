@@ -1,5 +1,8 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import miniProject from "../constants"
+import Header from './Header';
+import Footer from './Footer';
 
 const Menu = () => {
     const list = [
@@ -10,22 +13,29 @@ const Menu = () => {
         { name: 'Todo', path: '/todo', bg: 'todo' },
         { name: 'Weather', path: '/weather', bg: 'weather' },
         { name: 'Quiz', path: '/quiz', bg: 'quiz' },
-    ]
-    return (
+    ];
 
+    return (
         <div>
-            <h1>Menu</h1>
-            <div className='d-flex menu-container'>
+            <h1 className="text-center mt-4">Projects</h1>
+            <hr />
+            <div className="row px-5">
                 {
-                    list.map((e, index) => <div key={'icons' + index} className={'menu-icon ' + e.bg}>
-                        <Link to={e.path} className='icon-card'>
-                            {e.name}
-                        </Link>
-                    </div>)
+                    miniProject.map((item, index) => (
+                        <div key={index} className="col-md-4 mb-4" >
+                            <div className={`card text-center ${item.bg}`} >
+                                <div className="card-body d-flex align-items-center justify-content-center" style={{ height: '200px', width: '200px' }}>
+                                    <Link to={item.path} className="stretched-link text-decoration-none">
+                                        <h5 className="card-title">{item.name}</h5>
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
+                    ))
                 }
             </div>
         </div>
-    )
+    );
 }
 
-export default Menu
+export default Menu;

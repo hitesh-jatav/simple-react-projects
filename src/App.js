@@ -9,6 +9,9 @@ import Calculator from './components/Calculator';
 import TodoList from './components/Todo';
 import Weather from './components/Weather';
 import Quiz from './components/Quiz';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const appRouter = createBrowserRouter([
   {
@@ -49,9 +52,11 @@ const appRouter = createBrowserRouter([
 function App() {
 
   return (
-    <div className='App'>
+    <>
       <RouterProvider router={appRouter} />
-    </div>
+      <ToastContainer />
+
+    </>
   );
 }
 

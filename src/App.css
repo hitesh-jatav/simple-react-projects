@@ -1,564 +1,114 @@
-.App {
-  text-align: center;
+.navbar-nav .nav-item:hover {
+  background-color: rgba(180, 190, 203, 0.4);
 }
 
-a {
-  text-decoration: none;
-  color: black;
-  margin-top: auto;
-  margin-bottom: auto;
-}
-
-
-.menu-container {
-  /* border: 1px solid black; */
-  height: fit-content;
-  flex-wrap: wrap;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 800px;
-
-  .menu-icon {
-    min-width: 200px;
-    border: 1px solid black;
-    height: 200px;
-    margin: 30px;
-    border-radius: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-  }
+body {
+  font-family: 'Montserrat', sans-serif !important;
+  width: 100vw;
+  background-color: #6EACDA !important;
 }
 
 .dict-page {
-  height: 100vh;
-  overflow: hidden;
-  background-color: #FF9F66;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
+  text-align: center;
+
+  padding: 30px;
+  background-color: #E2DFD0;
+  width: max-content;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 50px;
+  min-height: 400px;
+  margin-top: 50px;
 
 
-  .dict-wrapper {
-    border-radius: 20px;
-    background-color: #FFFAE6;
-    width: 800px;
-    height: fit-content;
-    min-height: 500px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-
-    .input-box {
-      border: 1px solid grey;
-      width: 80%;
-      margin-left: auto;
-      margin-right: auto;
-      display: flex;
-      border-radius: 10px;
-      padding: 5px;
-      text-align: center;
-
-      input {
-        border: none;
-        outline: none;
-        background-color: transparent;
-        padding: 10px;
-        width: 90%;
-        font-size: 18px;
-        /* width: fit-content; */
-      }
-
-      i {
-        font-size: 25px;
-        margin-top: 5px;
-        cursor: pointer;
-      }
-
-
-    }
-
-    .definitions-container {}
-
-    p {
-      width: fit-content;
-    }
-
-    .meaning {
-      border: 1px solid black;
-
-      margin-top: 10px;
-      /* border: 1px solid grey; */
-      width: 80%;
-      margin-left: auto;
-      margin-right: auto;
-      padding: 5px;
-      /* display: flex; */
-      text-align: center;
-
-
-
-    }
-  }
-}
-
-.color-gray {
-  color: gray;
-}
-
-.border-0 {
-  border: none !important;
-}
-
-.color-black {
-  color: black
-}
-
-.pass-page {
-  height: 100vh;
-  overflow: hidden;
-  background-color: #344C64;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-
-  .pass-wrapper {
-    border-radius: 20px;
-    background-color: #57A6A1;
-    width: 800px;
-    height: fit-content;
-    min-height: 500px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-
-    .input-container {
-      width: 80%;
-      margin-left: auto;
-      margin-right: auto;
-      margin-bottom: 10px;
-      padding: 10px;
-      display: flex;
-      text-align: center;
-
-      input {
-        height: 100%;
-        padding: 5px;
-        width: 100px;
-        margin-left: 10px;
-        border: 1px solid gray;
-        /* width: 30px; */
-        /* height: 30px; */
-      }
-
-      .checkbox {
-        width: 25px;
-        height: 25px;
-      }
-
-      span {
-        display: block;
-      }
-
-    }
-
-    button {
-      padding: 10px 20px;
-      border: none;
-      border-radius: 15px;
-      font-weight: 900;
-      background-color: #240750;
-      color: #fff;
-      cursor: pointer;
-      margin-top: 5px;
-    }
-  }
-}
-
-.cursor-not-allowed {
-  cursor: not-allowed !important;
-  background-color: gray !important;
-}
-
-.text-danger {
-  color: rgb(212, 85, 85) !important;
-}
-
-.d-flex {
-  display: flex !important;
-}
-
-.justify-content-evenly {
-  justify-content: space-evenly;
-}
-
-
-
-.bg-none {
-  background-color: transparent !important;
-}
-
-.tic-tac-toe-wrapper {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #FFEBD8;
-
-  .tic-tac-toe {
-    /* border: 1px solid black; */
-    width: fit-content;
-    margin: auto;
-
-    .row-box {
-      .col-box {
-        height: 150px;
-        width: 150px;
-        border: 1px solid black;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 10px;
-        border-radius: 60px;
-        cursor: pointer;
-
-        span {
-          font-size: 50px;
-        }
-      }
-    }
-  }
-}
-
-
-.weather-wrapper {
-  background-color: #8E7AB5;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  /* src/WeatherApp.css */
-  .weather-app {
-    background-color: #EEA5A6;
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    text-align: center;
-  }
-
-  .input-container {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-  }
-
-  .input-container input {
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    flex: 1;
-    margin-right: 10px;
-  }
-
-  .input-container button {
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    background-color: #007bff;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-
-  .input-container button:hover {
-    background-color: #0056b3;
-  }
-
-  .weather-info {
-    margin-top: 20px;
+  .definitions-container {
     text-align: left;
   }
 
-  .error {
-    color: red;
+  .search {
+    border: 1px solid #c4c4c4;
+    background-color: white;
+    width: 500px;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 50px;
+    font-size: 18px;
+    top: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
   }
 
-}
+  .search input {
+    width: 400px;
+    height: 65px;
+    border: none;
+    padding: 8px 20px;
+    outline: none;
+    font-size: 18px;
 
-.quiz-wrapper {
-
-  background-color: #9EB384;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  /* src/QuizApp.css */
-  .quiz-app {
-    background-color: #FAF1E4;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    text-align: center;
-    /* background-color: #f9f9f9; */
   }
 
-  .question-section {
-    margin-bottom: 20px;
+  .button-src {
+    padding: 10px 10px;
+    display: inline-block;
   }
 
-  .question-count {
-    margin-bottom: 10px;
+  .button-src button {
+    padding: 10px 35px 10px 35px;
+    border-radius: 50px;
+    border: none;
+    margin: 9px 7px;
+    background-color: #FF7A00;
+    color: #ffffff;
     font-size: 18px;
   }
 
-  .question-text {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-
-  .answer-section button {
-    padding: 10px 20px;
-    margin: 5px;
-    font-size: 16px;
-    border: none;
-    background-color: #007bff;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-
-  .answer-section button:hover {
-    background-color: #0056b3;
-  }
-
-  .score-section {
-    font-size: 24px;
-    margin-top: 20px;
-
-    button{
-      padding: 20px;
-      border-radius: 5px;
-      border: none;
-      background-color: #57A6A1;
-      font-weight: 700;
-      color: white;
-    }
-  }
-
 }
 
-.color-x {
-  background-color: #FFC5C5;
+.pass-page {
+  padding: 30px;
+  width: max-content;
+  max-width: 600px;
+  margin: 50px auto;
+  border-radius: 50px;
+  min-height: 400px;
+  background-color: #7077A1;
+  text-align: center;
+  color: #fff !important;
 }
 
-.color-o {
-  background-color: #C7DCA7;
+.dynamic-text-box {
+  max-width: 100%;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  white-space: normal;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  word-break: break-all;
 }
 
-.calc-wrapper {
-  background-color: #ACE2E1;
-  height: 100vh;
-  align-items: center;
-  justify-content: center;
-  display: flex;
+.calculator {
+  padding: 30px;
+  width: max-content;
+  max-width: 600px;
+  margin: 50px auto;
+  border-radius: 50px;
+  min-height: 400px;
+  background-color: #F73D93;
+  text-align: center;
+  color: #fff !important;
 
-  .calc-box {
-    background-color: #F7EEDD;
-    height: 600px;
-    border-radius: 50px;
-    padding: 20px;
-    width: 500px;
-
-    .screen {
-      background-color: #344C64;
-      width: 100%;
-      height: 140px;
-      border-radius: 20px;
-      color: white;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      justify-content: end;
-
-      .equation {
-        margin: 20px;
-        font-size: 24px;
-      }
-    }
-
-    .btn-group {
-      width: 100%;
-      justify-content: space-evenly;
-      margin-top: 20px;
-
-      .btn {
-        border: 1px solid gray;
-        width: 70px;
-        border-radius: 50%;
-        height: 70px;
-        align-items: center;
-        display: flex;
-        justify-content: center;
-        font-weight: 700;
-        cursor: pointer;
-      }
-
-      .orange {
-        background-color: orange;
-      }
-    }
-  }
-}
-
-
-.todo-wrapper {
-  background-color: #E59BE9;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  /* src/TodoList.css */
-  .todo-list {
-    background-color: #FFEBB2;
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
+  .btn {
+    transition: background-color 0.3s ease;
   }
 
-  .input-container {
-    display: flex;
-    margin-bottom: 20px;
+  .btn:hover {
+    background-color: #f0f0f0;
   }
 
-  .input-container input {
-    flex: 1;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-
-  .input-container button {
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    background-color: #28a745;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-left: 10px;
-  }
-
-  .input-container button:hover {
-    background-color: #218838;
-  }
-
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
-
-  li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    border-bottom: 1px solid #ccc;
-  }
-
-  li.completed span {
-    text-decoration: line-through;
-    color: #999;
-  }
-
-  li button {
-    background-color: #dc3545;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-
-  li button:hover {
-    background-color: #c82333;
-  }
-
-}
-
-
-/* The Modal (background) */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  /* background-color: rgb(0, 0, 0); */
-  background-color: rgba(0, 0, 0, 0.4);
-}
-
-/* Modal Content/Box */
-.modal-content {
-  /* background-color: #fefefe; */
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 40%;
-}
-
-/* The Close Button */
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.ttt {
-  background-color: #FFEBD8;
-}
-
-.dict {
-  background-color: #FF9F66;
-}
-
-.pass {
-  background-color: #344C64;
-}
-
-.calc {
-  background-color: #ACE2E1;
-}
-
-.todo {
-  background-color: #E59BE9;
-}
-
-.weather {
-  background-color: #8E7AB5;
-}
-
-.quiz {
-  background-color: #9EB384;
 }
