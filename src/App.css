@@ -26,47 +26,49 @@ body {
     text-align: left;
   }
 
-  .search {
-    border: 1px solid #c4c4c4;
-    background-color: white;
-    width: 500px;
-    overflow-x: hidden;
-    display: flex;
-    justify-content: space-between;
-    border-radius: 50px;
-    font-size: 18px;
-    top: 200px;
-    margin-left: auto;
-    margin-right: auto;
-    align-items: center;
-  }
-
-  .search input {
-    width: 400px;
-    height: 65px;
-    border: none;
-    padding: 8px 20px;
-    outline: none;
-    font-size: 18px;
-
-  }
-
-  .button-src {
-    padding: 10px 10px;
-    display: inline-block;
-  }
-
-  .button-src button {
-    padding: 10px 35px 10px 35px;
-    border-radius: 50px;
-    border: none;
-    margin: 9px 7px;
-    background-color: #FF7A00;
-    color: #ffffff;
-    font-size: 18px;
-  }
 
 }
+
+.search {
+  border: 1px solid #c4c4c4;
+  background-color: white;
+  width: 500px;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 50px;
+  font-size: 18px;
+  top: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+}
+
+.search input {
+  width: 400px;
+  height: 65px;
+  border: none;
+  padding: 8px 20px;
+  outline: none;
+  font-size: 18px;
+
+}
+
+.button-src {
+  padding: 10px 10px;
+  display: inline-block;
+}
+
+.button-src button {
+  padding: 10px 35px 10px 35px;
+  border-radius: 50px;
+  border: none;
+  margin: 9px 7px;
+  background-color: #FF7A00;
+  color: #ffffff;
+  font-size: 18px;
+}
+
 
 .pass-page {
   padding: 30px;
@@ -111,4 +113,15 @@ body {
     background-color: #f0f0f0;
   }
 
+}
+
+.todo-page {
+  padding: 30px;
+  width: max-content;
+  max-width: 600px;
+  margin: 50px auto;
+  border-radius: 50px;
+  min-height: 400px;
+  background-color: #CDC1FF;
+  text-align: center;
 }
