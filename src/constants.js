@@ -6,4 +6,5 @@ export default [
     { name: 'Todo', path: '/todo', bg: 'todo' },
     { name: 'Weather', path: '/weather', bg: 'weather' },
     { name: 'Quiz', path: '/quiz', bg: 'quiz' },
+    { name: 'Memory Game', path: '/memory', bg: 'memory' },
 ];

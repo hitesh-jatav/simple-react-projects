@@ -44,7 +44,7 @@ const TodoList = () => {
                 />
                 <div className="button-src">
                     <button onClick={addTask}>
-                        <i className="ri-search-2-line"></i>
+                        <i className="ri-add-line"></i>
                     </button>
                 </div>
             </div>

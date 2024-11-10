@@ -12,6 +12,7 @@ import Quiz from './components/Quiz';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Memory from './components/Memory';
 
 const appRouter = createBrowserRouter([
   {
@@ -45,8 +46,10 @@ const appRouter = createBrowserRouter([
   {
     path: 'quiz',
     element: <Quiz />
+  }, {
+    path: 'memory',
+    element: <Memory />
   }
-
 ]);
 
 function App() {
@@ -55,7 +58,6 @@ function App() {
     <>
       <RouterProvider router={appRouter} />
       <ToastContainer />
-
     </>
   );
 }

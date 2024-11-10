@@ -32,7 +32,6 @@ const Weather = () => {
         }
     };
 
-
     const handleSearch = () => {
         fetchWeather();
     };
@@ -53,10 +52,12 @@ const Weather = () => {
                 `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${crd.latitude},${crd.longitude}`
             );
             const data = await response.json();
+
             if (data.error) {
                 setError(data.error.message);
                 setWeather(null);
             } else {
+                console.log(data)
                 setCity(data.location.name)
                 setWeather(data);
                 setError('');
@@ -72,7 +73,6 @@ const Weather = () => {
         navigator.geolocation.getCurrentPosition(success, error, options);
         //
 
-
     }
 
     return (
@@ -80,25 +80,36 @@ const Weather = () => {
 
             <div className="weather-app">
                 <h1>Weather App</h1>
-                <div className="input-container">
+
+
+                <div className="search">
                     <input
                         type="text"
                         value={city}
                         onChange={(e) => setCity(e.target.value)}
                         placeholder="Enter city name"
                     />
-                    <button onClick={handleSearch} disabled={isFetching}>Search {isFetching && <i className="ri-restart-line"></i>}</button>
-                    <button className='bg-none' onClick={() => getLocation()}>
-                        <i class="ri-map-pin-line"></i>
-                    </button>
+                    <div className="button-src">
+                        <button onClick={handleSearch} disabled={isFetching}>
+                            {isFetching ? <i className="ri-restart-line"></i> :
+                                <i className="ri-search-2-line"></i>}
+                        </button>
+                    </div>
+
                 </div>
+                <button className='location-icon' onClick={() => getLocation()}>
+                    Fetch your  Current Location  <i className="ri-map-pin-line"></i>
+                </button>
+
                 {error && <p className="error">{error}</p>}
                 {weather && (
-                    <div className="weather-info">
-                        <h2>{weather.location.name}, {weather.location.country}</h2>
-                        <p>Temperature: {weather.current.temp_c}°C</p>
+                    <div className="weather-info my-5">
+                        <h2 className='mb-3'>
+                            {`${weather.location.name}, ${weather.location.region}, ${weather.location.country}`}
+                        </h2>
+                        <h4>Temperature: {weather.current.temp_c}°C</h4>
+                        <img className='weather-icon' src={weather.current.condition.icon} alt="weather icon" />
                         <p>Condition: {weather.current.condition.text}</p>
-                        <img src={weather.current.condition.icon} alt="weather icon" />
                         <p>Humidity: {weather.current.humidity}%</p>
                         <p>Wind Speed: {weather.current.wind_kph} kph</p>
                     </div>
@@ -109,3 +120,6 @@ const Weather = () => {
 };
 
 export default Weather;
+
+
+
