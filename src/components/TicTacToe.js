@@ -99,7 +99,7 @@ const TicTacToe = () => {
             {isModalVisible && (
                 <div ref={modalRef} id="myModal"
                     className={'modal'} style={{ display: 'block' }}>
-                    <div className={"modal-content " + `${isTurnX ? 'color-x' : 'color-o'}`}>
+                    <div className={`modal-content ${isTurnX ? 'color-x' : 'color-o'}`}>
                         <span className="close" onClick={() => closeModal()}>&times;</span>
                         <p>Congratulations, {isTurnX ? 'X' : 'O'} won the game!</p>
                     </div>

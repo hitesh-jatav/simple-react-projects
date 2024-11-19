@@ -27,14 +27,14 @@ const Quiz = () => {
     }
 
     return (
-        <div className='quiz-wrapper'>
+        <div className='quiz-card'>
             <div className="quiz-app">
                 {showScore ? (
                     <div className="score-section">
                         <p>
                             You scored {score} out of {quizData.length}
                         </p>
-                        <button onClick={() => restart()}>Restart</button>
+                        <button className='reset-button' onClick={() => restart()}>Restart</button>
                     </div>
                 ) : (
                     <div>

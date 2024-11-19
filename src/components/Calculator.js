@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { evaluate } from 'mathjs';
 
 const Calculator = () => {
     const buttons = [
@@ -42,13 +43,13 @@ const Calculator = () => {
 
     const getAns = () => {
         try {
-            const result = new Function(`return ${eqtn}`)();
+            const result = evaluate(eqtn); // Safely evaluate the expression
             setEqtn(result.toString());
         } catch {
             setEqtn('Error');
         }
     };
-
+    
     return (
         <div className="calculator mt-5">
             <h2 className='bold my-3'>Calculator</h2>

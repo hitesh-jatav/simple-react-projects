@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 
 const PasswordGenerator = () => {
     const [checks, setChecks] = useState({
@@ -19,26 +19,28 @@ const PasswordGenerator = () => {
         characters: ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '+']
     };
 
-    const generate = () => {
+    const generate = useCallback(() => {
         let password = '';
         let conditionsMatched = Object.keys(checks).filter(key => checks[key]);
-
+    
         if (conditionsMatched.length === 0) return;
-
+    
         conditionsMatched.forEach((type, index) => {
             let arr = getArrList[type];
             let count = Math.floor(length / conditionsMatched.length);
             if (index + 1 === conditionsMatched.length) count = length - password.length;
-
+    
             while (count > 0) {
                 const randomNum = createRandomNumber(arr.length);
                 password += arr[randomNum];
                 count--;
             }
         });
-
+    
         setPassword(password);
-    };
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [checks, length]);
+    
 
     const createRandomNumber = (limit) => {
         return Math.floor(Math.random() * limit);
@@ -46,25 +48,23 @@ const PasswordGenerator = () => {
 
     useEffect(() => {
         generate();
-    }, [length, checks]);
+    }, [generate]); // Use the memoized generate function
 
     const copyToClipboard = () => {
         navigator.clipboard.writeText(password)
             .then(() => {
                 toast.success('Password Copied Successfully', {
                     position: 'top-right',
-                    autoClose: 3000, // Auto close after 3 seconds
+                    autoClose: 3000,
                 });
             })
             .catch(err => {
                 toast.error('Something went wrong, Try again', {
                     position: 'top-right',
-                    autoClose: 3000, // Auto close after 3 seconds
+                    autoClose: 3000,
                 });
             });
     };
-
-
 
     return (
         <div className="pass-page mt-5">

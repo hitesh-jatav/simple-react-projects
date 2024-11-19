@@ -12,9 +12,10 @@ const TodoList = () => {
 
     const addTask = () => {
         if (newTask.trim()) {
-            setTasks([...tasks, { text: newTask, completed: false }]);
+            const updatedTasks = [...tasks, { text: newTask, completed: false }];
+            setTasks(updatedTasks);
             setNewTask('');
-            localStorage.setItem('tasks', JSON.stringify([...tasks, { text: newTask, completed: false }]));
+            localStorage.setItem('tasks', JSON.stringify(updatedTasks));
         }
     };
 
@@ -23,13 +24,13 @@ const TodoList = () => {
             i === index ? { ...task, completed: !task.completed } : task
         );
         setTasks(updatedTasks);
+        localStorage.setItem('tasks', JSON.stringify(updatedTasks));
     };
 
     const deleteTask = (index) => {
         const updatedTasks = tasks.filter((_, i) => i !== index);
         setTasks(updatedTasks);
-        localStorage.setItem('tasks', JSON.stringify(tasks.filter((_, i) => i !== index)));
-
+        localStorage.setItem('tasks', JSON.stringify(updatedTasks));
     };
 
     return (
@@ -50,7 +51,10 @@ const TodoList = () => {
             </div>
 
             {tasks.map((task, index) => (
-                <p key={index} className={task.completed ? 'completed ' : '' + 'd-flex justify-content-between w-100 my-2 px-4 py-2'}>
+                <p
+                    key={index}
+                    className={`${task.completed ? 'completed ' : ''}d-flex justify-content-between w-100 my-2 px-4 py-2`}
+                >
                     <span onClick={() => toggleTaskCompletion(index)}>
                         {task.text}
                     </span>

@@ -13,6 +13,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Memory from './components/Memory';
+import Quote from './components/Quote';
 
 const appRouter = createBrowserRouter([
   {
@@ -46,9 +47,14 @@ const appRouter = createBrowserRouter([
   {
     path: 'quiz',
     element: <Quiz />
-  }, {
+  },
+  {
     path: 'memory',
     element: <Memory />
+  },
+  {
+    path: 'quote',
+    element: <Quote />
   }
 ]);
 

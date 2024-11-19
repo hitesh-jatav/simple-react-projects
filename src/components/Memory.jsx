@@ -64,11 +64,16 @@ const Memory = () => {
             return;
         }
 
-        setMatched([...matched, id])
-        console.log('wond')
+        if (matched.length === (list.length - 1)) {
+            alert('You won!');
+            resetGame();
+        } else {
+            setMatched([...matched, id])
+        }
     }
 
     const resetGame = () => {
+        setMatched([])
         setCards(shuffleArray(list))
     }
     return (
@@ -90,7 +95,6 @@ const Memory = () => {
                 </button>
 
                 <h2>
-
                     {matched.length} Matched
                 </h2>
             </div>
