@@ -7,3 +7,6 @@
 5. todo
 6. weather
 7. quiz
+
+
+url : https://reacts-mini-projects.netlify.app/
