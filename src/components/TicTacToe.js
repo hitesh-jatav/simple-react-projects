@@ -4,7 +4,7 @@ const TicTacToe = () => {
     const nums = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
     const [axis, setAxis] = useState([]);
     const [zeroes, setZeroes] = useState([]);
-    const [isTurnX, setIsTurnX] = useState(false);
+    const [isTurnX, setIsTurnX] = useState(true); // X starts
     const [isModalVisible, setIsModalVisible] = useState(false);
     const modalRef = useRef(null);
 
@@ -20,26 +20,30 @@ const TicTacToe = () => {
 
     const checkWon = (col) => {
         let won;
-        if ((isTurnX && axis.length < 2) || (!isTurnX && zeroes.length < 2)) {
-            setIsTurnX(!isTurnX);
-            return;
-        }
         if (isTurnX) {
             won = winnerSet.find(set => isSubset(set, [...axis, col]));
         } else {
             won = winnerSet.find(set => isSubset(set, [...zeroes, col]));
         }
+
         if (won) {
             setTimeout(() => {
                 setIsModalVisible(true);
             }, 100);
         } else {
-            if (axis.length + zeroes.length === 8) closeModal()
-            else setIsTurnX(!isTurnX);
+            // Check for a draw (i.e., all 9 squares filled, no winner)
+            if (axis.length + zeroes.length === 9) {
+                setTimeout(() => {
+                    setIsModalVisible(true);
+                }, 100);
+            } else {
+                setIsTurnX(!isTurnX);
+            }
         }
     };
 
     const buttonClicked = (col) => {
+        // Prevent the user from clicking an already filled square
         if (axis.includes(col) || zeroes.includes(col)) {
             return;
         }
@@ -54,9 +58,9 @@ const TicTacToe = () => {
     const closeModal = () => {
         setAxis([]);
         setZeroes([]);
-        setIsTurnX(false)
-        setIsModalVisible(false)
-    }
+        setIsTurnX(true); // X always starts
+        setIsModalVisible(false);
+    };
 
     useEffect(() => {
         const handleClickOutside = (event) => {
@@ -71,7 +75,6 @@ const TicTacToe = () => {
             window.removeEventListener('click', handleClickOutside);
         };
     }, []);
-
 
     return (
         <div className='tic-tac-toe-wrapper'>
@@ -101,7 +104,7 @@ const TicTacToe = () => {
                     className={'modal'} style={{ display: 'block' }}>
                     <div className={`modal-content ${isTurnX ? 'color-x' : 'color-o'}`}>
                         <span className="close" onClick={() => closeModal()}>&times;</span>
-                        <p>Congratulations, {isTurnX ? 'X' : 'O'} won the game!</p>
+                        <p>{axis.length + zeroes.length === 9 ? 'It\'s a Draw!' : `Congratulations, ${isTurnX ? 'X' : 'O'} won the game!`}</p>
                     </div>
                 </div>
             )}

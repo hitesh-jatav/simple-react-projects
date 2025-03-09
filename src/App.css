@@ -3,9 +3,9 @@
 }
 
 body {
-  font-family: 'Montserrat', sans-serif !important;
+  font-family: "Montserrat", sans-serif !important;
   width: 100vw;
-  background-color: #6EACDA !important;
+  background-color: #6eacda !important;
 }
 
 a {
@@ -13,11 +13,11 @@ a {
 }
 
 .dict {
-  background-color: #E2DFD0 !important;
+  background-color: #e2dfd0 !important;
 }
 
 .pass {
-  background-color: #7077A1 !important;
+  background-color: #7077a1 !important;
 }
 
 .ttt {
@@ -25,35 +25,34 @@ a {
 }
 
 .calc {
-  background-color: #F73D93 !important;
+  background-color: #f73d93 !important;
 }
 
 .todo {
-  background-color: #CDC1FF !important;
+  background-color: #cdc1ff !important;
 }
 
 .weather {
-  background-color: #9EDF9C !important;
+  background-color: #9edf9c !important;
 }
 
 .quiz {
-  background-color: #A64D79 !important;
+  background-color: #a64d79 !important;
 }
 
 .memory {
-  background-color: #FBD288 !important;
+  background-color: #fbd288 !important;
 }
 
 .quote {
   background-color: #798645 !important;
 }
 
-
 .dict-page {
   text-align: center;
-
+  max-width: 70%;
   padding: 30px;
-  background-color: #E2DFD0;
+  background-color: #e2dfd0;
   width: max-content;
   margin-left: auto;
   margin-right: auto;
@@ -61,12 +60,9 @@ a {
   min-height: 400px;
   margin-top: 50px;
 
-
   .definitions-container {
     text-align: left;
   }
-
-
 }
 
 .search {
@@ -91,7 +87,6 @@ a {
   padding: 8px 20px;
   outline: none;
   font-size: 18px;
-
 }
 
 .button-src {
@@ -104,11 +99,10 @@ a {
   border-radius: 50px;
   border: none;
   margin: 9px 7px;
-  background-color: #FF7A00;
+  background-color: #ff7a00;
   color: #ffffff;
   font-size: 18px;
 }
-
 
 .pass-page {
   padding: 30px;
@@ -117,7 +111,7 @@ a {
   margin: 50px auto;
   border-radius: 50px;
   min-height: 400px;
-  background-color: #7077A1;
+  background-color: #7077a1;
   text-align: center;
   color: #fff !important;
 }
@@ -141,7 +135,7 @@ a {
   margin: 50px auto;
   border-radius: 50px;
   min-height: 400px;
-  background-color: #F73D93;
+  background-color: #f73d93;
   text-align: center;
   color: #fff !important;
 
@@ -152,7 +146,6 @@ a {
   .btn:hover {
     background-color: #f0f0f0;
   }
-
 }
 
 .todo-page {
@@ -162,7 +155,7 @@ a {
   margin: 50px auto;
   border-radius: 50px;
   min-height: 400px;
-  background-color: #CDC1FF;
+  background-color: #cdc1ff;
   text-align: center;
 }
 
@@ -173,7 +166,7 @@ a {
   margin: 50px auto;
   border-radius: 50px;
   min-height: 400px;
-  background-color: #9EDF9C;
+  background-color: #9edf9c;
   text-align: center;
   color: #000 !important;
 
@@ -181,8 +174,6 @@ a {
     height: 100px;
     width: 100px;
   }
-
-
 }
 
 .memory-card {
@@ -192,7 +183,7 @@ a {
   margin: 50px auto;
   border-radius: 50px;
   min-height: 400px;
-  background-color: #FBD288;
+  background-color: #fbd288;
   text-align: center;
   color: #000 !important;
   display: flex;
@@ -251,9 +242,7 @@ a {
     transform: rotateY(180deg);
     /* Flip the back face */
   }
-
 }
-
 
 .error {
   color: red !important;
@@ -264,11 +253,10 @@ a {
   border-radius: 50px;
   border: none;
   margin: 9px 7px;
-  background-color: #FF4545;
+  background-color: #ff4545;
   color: #ffffff;
   font-size: 18px;
 }
-
 
 .quiz-card {
   padding: 30px;
@@ -277,7 +265,7 @@ a {
   margin: 50px auto;
   border-radius: 50px;
   min-height: 400px;
-  background-color: #A64D79;
+  background-color: #a64d79;
   text-align: center;
   color: #000 !important;
   display: flex;
@@ -301,7 +289,6 @@ a {
   .answer-section {
     margin-top: 20px;
 
-
     button {
       background-color: transparent;
       border: none;
@@ -315,10 +302,7 @@ a {
 
     button:hover {
       background-color: coral;
-
     }
-
-
   }
 
   .reset-button {
@@ -328,10 +312,9 @@ a {
     margin-right: 10px;
     padding: 10px 20px;
     margin-left: 5px;
-    background-color: #FBD288;
+    background-color: #fbd288;
   }
 }
-
 
 .quote-wrapper {
   padding: 30px;
@@ -342,8 +325,28 @@ a {
   min-height: 400px;
   background-color: #798645;
   text-align: center;
-  color: #000 !important;
+  color: white !important;
+
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
+  flex-direction: column;
+
+  .quote-buttons {
+    padding: 10px 5px !important;
+  }
+
+  .quote-content-div {
+    height: fit-content;
+    padding-top: auto;
+    padding-bottom: auto;
+    .glyphicon-user {
+      font-size: 18px;
+    }
+
+    .quote-content {
+      .quote-text {
+        font-size: 32px;
+      }
+    }
+  }
 }
